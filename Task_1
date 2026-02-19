@@ -1,0 +1,22 @@
+import random
+words = ['GUAVA', 'BANANA', 'ORANGE', 'GRAPES', 'MANGO']
+word = random.choice(words)
+guessed_word = ['_'] * len(word)
+chances = 6
+print("Welcome to the Word Guess Game")
+while chances > 0:
+    guess = input("\nEnter a letter: ").upper()
+    found = False
+    for i in range(len(word)):
+        if word[i] == guess:
+            guessed_word[i] = guess
+            found = True
+    print(" ".join(guessed_word))
+    if not found:
+        chances -= 1
+        print("Wrong Guess! You have", chances, "chances left.")
+    if guessed_word == list(word):
+        print("\nCongratulations! You guessed the correct word.")
+        break
+if chances == 0:
+    print("\nGame Over! The correct word was:", word)
