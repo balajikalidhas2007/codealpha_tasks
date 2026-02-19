@@ -1,0 +1,20 @@
+stocks = {
+    "APPLE": 175,
+    "GOOGLE": 140,
+    "AMAZON": 135,
+    "MICROSOFT": 310,
+    "TESLA": 220
+}
+total = 0
+while True:
+    stock_name = input("Enter stock name: ").upper()
+    if stock_name in stocks:
+        quantity = int(input("Enter quantity: "))
+        total += stocks[stock_name] * quantity
+        print("Added successfully.")
+    else:
+        print("Stock not found.")
+    choice = input("Want to add more stocks? (Y/N): ").lower()
+    if choice == 'n':
+        break
+print("The Invested Amount is:", total)
